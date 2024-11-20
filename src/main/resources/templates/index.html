@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Opciones</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos del contenedor */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Estilos de la tabla */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 12px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        /* Estilos de los enlaces */
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos de los botones */
+        td a {
+            display: block;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        td a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menú de Opciones</h1>
+        <table>
+            <tr>
+                <td><a th:href="@{/listar}">Mostrar Empleados</a></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/buscarSueldo}">Buscar Sueldo</a></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{/buscarEmpleado}">Buscar Empleado</a></td> 
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Empleado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .link {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Editar Empleado</h1>
+    <div class="form-container">
+        <form th:action="@{/enviarCambios}" method="post">
+            <input type="hidden" name="dni" th:value="${empleado.dni}">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" th:value="${empleado.nombre}">
+
+            <label for="sexo">Sexo:</label>
+            <input type="text" id="sexo" name="sexo" th:value="${empleado.sexo}">
+
+            <label for="categoria">Categoría:</label>
+            <input type="number" id="categoria" name="categoria" th:value="${empleado.categoria}">
+
+            <label for="anyos">Años:</label>
+            <input type="number" id="anyos" name="anyos" th:value="${empleado.anyos}">
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+
+        <div class="link">
+            <a th:href="@{/index}">Volver al Inicio</a>
+        </div>
+    </div>
+</body>
+</html>

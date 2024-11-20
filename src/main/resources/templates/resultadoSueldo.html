@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado de Sueldo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .message {
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .salary-info {
+            font-size: 20px;
+            color: #5bc0de;
+        }
+
+        a {
+            color: #007BFF;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Resultado de Sueldo</h1>
+
+    <p th:if="${mensajeError != null}" class="message">
+        <strong th:text="${mensajeError}"></strong>
+    </p>
+
+    <p th:if="${salario != null}" class="salary-info">
+        El salario del empleado con DNI <strong th:text="${dni}"></strong> es: 
+        <strong th:text="${salario}"></strong> euros.
+    </p>
+
+    <a th:href="@{/index}">Volver al Inicio</a>
+
+</body>
+</html>
